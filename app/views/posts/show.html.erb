@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @post.subtitle %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @post.image_url %>
+</p>
+
+<p>
+  <strong>Date posted:</strong>
+  <%= @post.date_posted %>
+</p>
+
+<p>
+  <strong>Date modified:</strong>
+  <%= @post.date_modified %>
+</p>
+
+<p>
+  <strong>Post body:</strong>
+  <%= @post.post_body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
