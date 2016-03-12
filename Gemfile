@@ -56,3 +56,5 @@ gem 'simple_form'
 gem 'seed_dump'
 
 gem 'devise'
+
+gem 'rails_admin'
