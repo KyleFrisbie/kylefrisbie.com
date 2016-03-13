@@ -45,8 +45,6 @@ group :development do
   gem 'spring'
 end
 
-gem 'bootstrap'
-
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
@@ -58,3 +56,7 @@ gem 'seed_dump'
 gem 'devise'
 
 gem 'rails_admin'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'truncate_html'
