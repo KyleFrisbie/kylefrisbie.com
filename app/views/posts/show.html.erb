@@ -1,39 +1,27 @@
 <p id="notice"><%= notice %></p>
+<article class="blog-post">
+  <header>
+    <h1><%= @post.title %></h1>
+    <div class="lead-image">
+      <%= image_tag @post.image_url, class: "img-responsive" %>
+      <div class="meta clearfix">
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Subtitle:</strong>
-  <%= @post.subtitle %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @post.image_url %>
-</p>
-
-<p>
-  <strong>Date posted:</strong>
-  <%= @post.date_posted %>
-</p>
-
-<p>
-  <strong>Date modified:</strong>
-  <%= @post.date_modified %>
-</p>
-
-<p>
-  <strong>Post body:</strong>
-  <%= @post.post_body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+        <div class="author">
+          <i class="glyphicon glyphicon-user"></i>
+          <span class="data">
+            <%= @post.user.first_name %> <%= @post.user.last_name %>
+          </span>
+        </div>
+        <div class="date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <span class="data">
+            <%= @post.date_posted %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="body">
+    <%= @post.post_body.html_safe %>
+  </div>
+</article>

@@ -1,9 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
+<h1>
+  Posts with <%= @tag.name %> tag
+</h1>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<% @tag.posts.each do |post| %>
+    <div class="col-md-6 col-sm-6">
+      <article class=" blog-teaser">
+        <header>
+          <!--image_tag post.image_url-->
+          <h3><%= link_to post.title, controller: "posts", action: "show", id: post %></h3>
+          <span class="meta">
+            <%= post.subtitle %><br/>
+            <%= post.date_posted %>
+          </span>
+          <hr>
+        </header>
+        <div class="body">
+          <%= truncate_html(post.post_body, length: 150) %>
+        </div>
+        <div class="clearfix">
+          <a href="blog-detail.html" class="btn btn-tales-one">Read more</a>
+        </div>
+      </article>
+    </div>
+<% end %>

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>Kyle L Frisbie</title>
@@ -20,7 +24,7 @@
 <header>
   <div class="widewrapper masthead">
     <div class="container">
-      <%= link_to "Kyle L Frisbie", {controller: "posts"}, id: 'logo' %>
+      <%= link_to "Kyle L Frisbie", @posts_session_path, id: 'logo' %>
 
       <div id="mobile-nav-toggle" class="pull-right">
         <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
@@ -62,10 +66,14 @@
       <aside class="col-md-4 blog-aside">
         <div class="aside-widget">
           <header>
-            <h3>A simple widget</h3>
+            <h3>Tags</h3>
           </header>
-          <div class="body">
-            that says hi!
+          <div class="body clearfix">
+            <ul class="tags">
+              <% tags.each do |tag| %>
+                  <%= link_to tag.name, tag_path(tag), id: tag, class: "btn btn-default" %>
+              <% end %>
+            </ul>
           </div>
         </div>
       </aside>
@@ -75,58 +83,7 @@
 
 
 <footer>
-  <div class="widewrapper footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 footer-widget">
-          <h3> <i class="fa fa-cog"></i>Statistics</h3>
-
-          <span>Even we sometimes loose track of how many articles we actually have here.  This one helps:</span>
-
-          <div class="stats">
-            <div class="line">
-              <span class="counter">27</span>
-              <span class="caption">Articles</span>
-            </div>
-            <div class="line">
-              <span class="counter">208</span>
-              <span class="caption">Comments</span>
-            </div>
-            <div class="line">
-              <span class="counter">2</span>
-              <span class="caption">Authors</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 footer-widget">
-          <h3> <i class="fa fa-star"></i> Hall of Fame</h3>
-          <ul class="tales-list">
-            <li><a href="index.html">Why we Need to Encrypt All Communication</a></li>
-            <li><a href="#">Selling is a Function of Design. Not Vice-Versa.</a></li>
-            <li><a href="#">It’s Hard To Come Up With Dummy Titles</a></li>
-            <li><a href="#">Why the Internet is Full of Cats</a></li>
-            <li><a href="#">Last Made-Up Headline, I Swear!</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-4 footer-widget">
-          <h3> <i class="fa fa-envelope"></i>Contact Me</h3>
-
-          <span>I'm happy to hear from my readers. Thoughts, feedback, critique - all welcome! Drop me a line:</span>
-
-                        <span class="email">
-                            <a href="#">jimmy@notanactualemail.com</a>, PGP key 0x5AK0BEA1
-                        </span>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="widewrapper copyright">
-    <div class="container">
-      <!--Note: Feel free to remove or change this link as you please. A link to HackerThemes is not required by any means-->
-      Designed by <a href="http://hackerthemes.com" rel="nofollow">HackerThemes</a>
-    </div>
   </div>
 </footer>
 
