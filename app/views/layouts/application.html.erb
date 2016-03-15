@@ -24,7 +24,7 @@
 <header>
   <div class="widewrapper masthead">
     <div class="container">
-      <%= link_to "Kyle L Frisbie", @posts_session_path, id: 'logo' %>
+      <a href="/" , id="logo">Kyle L Frisbie</a>
 
       <div id="mobile-nav-toggle" class="pull-right">
         <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
@@ -69,6 +69,18 @@
             <ul class="tags">
               <% tags.each do |tag| %>
                   <%= link_to tag.name, tag_path(tag), id: tag, class: "btn btn-default" %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="aside-widget">
+          <header>
+            <h3>Recent Posts</h3>
+          </header>
+          <div class="body">
+            <ul class="tales-list">
+              <% posts.each do |post| %>
+                  <li><%= link_to post.title, post_path(post), id: post %></li>
               <% end %>
             </ul>
           </div>

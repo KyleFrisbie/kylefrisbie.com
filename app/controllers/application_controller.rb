@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :tags
 
+  def posts
+    @posts = Post.all.order('date_posted DESC').take(5)
+  end
+  helper_method :posts
 end
