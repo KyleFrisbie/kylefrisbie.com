@@ -15,7 +15,7 @@ class TagsController < ApplicationController
   # GET /tags/new
   def new
     @tag = Tag.new
-    @posts = Post.all
+    @posts = Post.all.order('date_posted DESC')
   end
 
   # GET /tags/1/edit
