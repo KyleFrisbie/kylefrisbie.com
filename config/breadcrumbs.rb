@@ -2,6 +2,10 @@ crumb :root do
   link "Blog", root_path
 end
 
+crumb :about do
+  link "About", about_path
+end
+
 crumb :tags do
   link "Tags", tags_path
 end
