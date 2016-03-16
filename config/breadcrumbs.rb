@@ -2,6 +2,15 @@ crumb :root do
   link "Blog", root_path
 end
 
+crumb :tags do
+  link "Tags", tags_path
+end
+
+crumb :tag do |tag|
+  link tag.name, tags_path(tag)
+  parent :tags
+end
+
 crumb :posts do
   link "Posts", posts_path
 end
@@ -9,15 +18,6 @@ end
 crumb :post do |post|
   link post.title, posts_path(post)
   parent :posts
-end
-
-crumb :tags do
-  link "Tags", tags_path
-end
-
-crumb :tag do |tag|
-  link tag.name, tags_path(tag)
-  parent :tag
 end
 
 # crumb :project_issues do |project|
