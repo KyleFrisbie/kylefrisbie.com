@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kyle L Frisbie</title>
+  <meta name="description" content="Kyle L Frisbie's personal blog site.">
+  <meta name="viewport" content="width=device-width">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Google Webfonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CPT+Serif:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+  <div class="widewrapper masthead">
+    <div class="container">
+      <a href="/" , id="logo">Kyle L Frisbie</a>
+
+      <div id="mobile-nav-toggle" class="pull-right">
+        <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+      <nav class="pull-right tales-nav">
+        <div class="collapse navbar-collapse">
+          <ul class="nav nav-pills navbar-nav">
+
+            <li class="dropdown active">
+              <%= link_to "Posts", posts_path %>
+            </li>
+            <li>
+              <%= link_to "Projects", controller: "tags", action: "show", id: 4 %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+<div class="widewrapper main">
+  <%= yield %>
+</div>
+
+
+<footer>
+  <div class="widewrapper copyright">
+  </div>
+</footer>
+<%= disqus_init %>
+</body>
+</html>

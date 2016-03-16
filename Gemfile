@@ -64,3 +64,5 @@ gem 'truncate_html'
 gem 'puma'
 
 gem 'disqus_rails'
+
+gem 'font-awesome-sass'
