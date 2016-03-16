@@ -66,3 +66,6 @@ gem 'puma'
 gem 'disqus_rails'
 
 gem 'font-awesome-sass'
+
+gem 'gretel'
+
