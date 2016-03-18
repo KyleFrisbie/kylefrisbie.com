@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 <% breadcrumb :tag, @tag %>
 <h1>
-  Posts with the "<%= @tag.name %>" tag
+  <% if @tag.name == "project" %>
+      Projects
+  <% else %>
+      Posts with the "<%= @tag.name %>" tag
+  <% end %>
 </h1>
 
 <% @tag.posts.each do |post| %>
